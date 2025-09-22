@@ -2,6 +2,18 @@
     --mainColor: #16141a;
     --textColor: #800020;
     --secodaryColor: #f21643;
+
+    --darkColor: #fe8d59;
+
+    --bgColor: #212628;
+    --transition: all 0.5s ease;
+
+    --switch-width: 60px;
+    --switch-height: 25px;
+    --switch-rounded: 50px;
+    --switch-padding: 5px;
+    --switch-bg: linear-gradient(to bottom, #73bbff, #a2d1fd);
+    --switch-bg-dark: linear-gradient(to bottom, #2b3347, #181d27);
 }
 
 
@@ -17,6 +29,44 @@ p {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    font-size: 12px;
+}
+
+body{
+    transition: var(--transition);
+}
+
+body.dark{
+    background-color: var(--bgColor);
+}
+
+body.dark .switch{
+    background: var(--switch-bg-dark);
+
+    
+}
+
+body.dark .nav{
+    background-color: var(--bgColor);
+}
+
+body.dark .nav-anchors a{
+    color: white;
+}
+
+body.dark .main-titulo h3{
+    color: white;
+}
+
+body.dark .main-titulo img{
+    /* background-color: white;
+    border-radius: 20%; */
+
+      filter: invert(100%) sepia(100%) saturate(0) hue-rotate(270deg) brightness(100%)
+}
+
+body.dark .main-titulo__cita{
+    color: white;
 }
 
 
@@ -30,6 +80,66 @@ p {
     margin: 0 auto;
 }
 
+.switch{
+    width: var(--switch-width);
+    height: var(--switch-height);
+    border-radius: var(--switch-rounded);
+    cursor: pointer;
+    background: var(--switch-bg);
+    transition: var(--transition);
+}
+
+.switch input{
+    display: none;
+}
+
+.sunmoon{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #ffc187;
+    box-shadow: 0px 0px 20px #ffc187;
+    transition: var(--transition);
+}
+
+body.dark .sunmoon{
+    display: block;
+    margin-left: 33px;
+    background: #dee5f3;
+    box-shadow: 0px 0px 20px #f2f4f7;
+    
+}
+
+body.dark .cloud-2{
+    display: none;
+}
+
+body.dark .cloud-1{
+    margin-top: 5px;
+    margin-left: -10px;
+}
+
+body.dark .container-images h1{
+    color: var(--darkColor);
+}
+
+/* body.dark .hero-text{
+    color: var(--bgColor);
+} */
+
+.darkside{
+    display: flex;
+}
+
+.cloud-1{
+    margin-top: 4px;
+    height: 25px;
+    margin-left: 3px;
+}
+
+.cloud-2{
+    height: 23px;
+}
 
 
 
@@ -178,6 +288,7 @@ p {
     font-weight: 400;
     font-style: normal;
     font-size: 22px;
+  
 }
 
 .btn-cta {
@@ -250,6 +361,7 @@ p {
         font-style: normal;
         text-decoration: none;
         text-transform: uppercase;
+        
     }
 }
 
@@ -259,6 +371,7 @@ p {
     font-weight: 400;
     font-style: normal;
     text-align: center;
+    margin-top: 10px;
 }
 
 .layout-shifter img {
@@ -333,7 +446,7 @@ p {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        gap: 80px;
+        gap: 60px;
     }
 
     .nav-anchors a {
